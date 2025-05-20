@@ -1,0 +1,72 @@
+# Core Libraries
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+
+# LLM Models & Frameworks
+# transformers
+# torch
+# accelerate
+# bitsandbytes # For quantization if needed
+# sentencepiece
+
+# Evolutionary Algorithms / RL
+# deap
+# pygad
+# ray[rllib]
+# stable-baselines3
+
+# Evaluation & Sandboxing
+# pytest
+# hypothesis
+# e2b-sdk  # For E2B sandbox
+# docker
+
+# Data Storage
+# psycopg2-binary  # For PostgreSQL
+# pymongo  # For MongoDB
+# dvc
+
+# Core Libraries
+google-generativeai>=0.3.0
+python-dotenv>=1.0.0
+
+# LLM Models & Frameworks
+# transformers
+# torch
+# accelerate
+# bitsandbytes # For quantization if needed
+# sentencepiece
+
+# Evolutionary Algorithms / RL
+# deap
+# pygad
+# ray[rllib]
+# stable-baselines3
+
+# Evaluation & Sandboxing
+# pytest
+# hypothesis
+# e2b-sdk  # For E2B sandbox
+# docker
+
+# Data Storage
+# psycopg2-binary  # For PostgreSQL
+# pymongo  # For MongoDB
+# dvc
+
+# Utilities
+# jinja2
+mem0ai>=1.2.0  # Memory management for agents
+
+# API/Web (Optional, if exposing functionality)
+# fastapi
+# uvicorn
+
+asyncio>=3.4.3
+uuid>=1.30
+gradio>=4.0.0
+
+# Deer-Flow Integration
+requests>=2.31.0
+deerflow-sdk>=1.0.0  # Main SDK package
+deerflow-tools>=0.5.0  # Optional tools package
