@@ -1,6 +1,6 @@
 # Core Libraries
 google-generativeai>=0.3.0
-python-dotenv>=1.0.0
+# python-dotenv>=1.0.0 # Will be listed once below
 
 # LLM Models & Frameworks
 # transformers
@@ -16,7 +16,8 @@ python-dotenv>=1.0.0
 # stable-baselines3
 
 # Evaluation & Sandboxing
-# pytest
+pytest
+pytest-asyncio
 # hypothesis
 # e2b-sdk  # For E2B sandbox
 # docker
@@ -56,7 +57,7 @@ python-dotenv>=1.0.0
 
 # Utilities
 # jinja2
-mem0ai>=1.2.0  # Memory management for agents
+mem0ai>=0.1.100  # Memory management for agents (version adjusted)
 
 # API/Web (Optional, if exposing functionality)
 # fastapi
@@ -68,5 +69,5 @@ gradio>=4.0.0
 
 # Deer-Flow Integration
 requests>=2.31.0
-deerflow-sdk>=1.0.0  # Main SDK package
-deerflow-tools>=0.5.0  # Optional tools package
+# deerflow-sdk>=1.0.0  # Main SDK package - Commented out due to availability issues
+# deerflow-tools>=0.5.0  # Optional tools package - Commented out due to availability issues

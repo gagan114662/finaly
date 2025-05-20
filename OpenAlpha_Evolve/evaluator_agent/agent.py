@@ -11,8 +11,8 @@ import asyncio
 import sys
 from typing import Optional, Dict, Any, Tuple, Union, List
 
-from core.interfaces import EvaluatorAgentInterface, Program, StrategyProgram, TaskDefinition, BaseAgent
-from config import settings
+from OpenAlpha_Evolve.core.interfaces import EvaluatorAgentInterface, Program, StrategyProgram, TaskDefinition, BaseAgent
+from OpenAlpha_Evolve.config import settings
 from .backtester import Backtester
 
 logger = logging.getLogger(__name__)

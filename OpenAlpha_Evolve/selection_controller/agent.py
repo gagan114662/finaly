@@ -3,8 +3,8 @@ import random
 import logging
 from typing import List, Dict, Any, Optional
 
-from core.interfaces import SelectionControllerInterface, Program, BaseAgent
-from config import settings
+from OpenAlpha_Evolve.core.interfaces import SelectionControllerInterface, Program, BaseAgent
+from OpenAlpha_Evolve.config import settings
 
 logger = logging.getLogger(__name__)
 

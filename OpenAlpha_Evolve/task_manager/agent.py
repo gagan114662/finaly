@@ -4,19 +4,19 @@ import asyncio
 import uuid
 from typing import List, Dict, Any, Optional
 
-from core.interfaces import (
+from OpenAlpha_Evolve.core.interfaces import (
     TaskManagerInterface, TaskDefinition, Program, BaseAgent,
     PromptDesignerInterface, CodeGeneratorInterface, EvaluatorAgentInterface,
     DatabaseAgentInterface, SelectionControllerInterface
 )
-from config import settings
+from OpenAlpha_Evolve.config import settings
 
                                        
-from prompt_designer.agent import PromptDesignerAgent
-from code_generator.agent import CodeGeneratorAgent
-from evaluator_agent.agent import EvaluatorAgent
-from database_agent.agent import InMemoryDatabaseAgent                         
-from selection_controller.agent import SelectionControllerAgent
+from OpenAlpha_Evolve.prompt_designer.agent import PromptDesignerAgent
+from OpenAlpha_Evolve.code_generator.agent import CodeGeneratorAgent
+from OpenAlpha_Evolve.evaluator_agent.agent import EvaluatorAgent
+from OpenAlpha_Evolve.database_agent.agent import InMemoryDatabaseAgent                         
+from OpenAlpha_Evolve.selection_controller.agent import SelectionControllerAgent
 
 logger = logging.getLogger(__name__)
 

@@ -2,7 +2,7 @@
 from typing import Optional, Dict, Any
 import logging
 
-from core.interfaces import PromptDesignerInterface, Program, TaskDefinition, BaseAgent
+from OpenAlpha_Evolve.core.interfaces import PromptDesignerInterface, Program, TaskDefinition, BaseAgent
 
 logger = logging.getLogger(__name__)
 
