@@ -11,6 +11,7 @@ import asyncio
 import sys
 from typing import Optional, Dict, Any, Tuple, Union, List
 
+from mem0 import AsyncMemoryClient # Moved import to module level
 from OpenAlpha_Evolve.core.interfaces import EvaluatorAgentInterface, Program, StrategyProgram, TaskDefinition, BaseAgent
 from OpenAlpha_Evolve.config import settings
 from .backtester import Backtester
@@ -379,8 +380,8 @@ print(json.dumps(final_output, default=custom_json_serializer))
     async def _get_market_regime(self) -> Dict[str, Any]:
         """Get current market regime from MCP server"""
         try:
-            from mem0 import Memory
-            memory = Memory()
+            # Import already moved to module level
+            memory = AsyncMemoryClient() # Changed from Memory to AsyncMemoryClient
             
             # Search for relevant market regime memories
             regime_memories = memory.search(

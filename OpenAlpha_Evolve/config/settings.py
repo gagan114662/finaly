@@ -17,6 +17,7 @@ DEERFLOW = DeerFlowConfig(
 FLASH_API_KEY = os.getenv("FLASH_API_KEY")
 PRO_API_KEY = os.getenv("PRO_API_KEY")
 EVALUATION_API_KEY = os.getenv("EVALUATION_API_KEY")
+MEM0_API_KEY = os.getenv("MEM0_API_KEY")
 
 if not EVALUATION_API_KEY:
     print("Warning: EVALUATION_API_KEY not found in .env or environment")

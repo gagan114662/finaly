@@ -62,14 +62,12 @@ async def test_initialize_population_workflow():
     assert task_manager.code_generator.generate_code.call_count == population_size
     expected_calls_to_generate_code = [
         call(
-            prompt=test_prompt_value,
+            test_prompt_value, # Passed positionally
             temperature=0.8, # Actual value from TaskManagerAgent.initialize_population
             syntax_validation=False  # Actual value from TaskManagerAgent (default for self.syntax_validation)
-            # parent_code, max_length, output_format are not explicitly passed by initialize_population,
-            # so they are not included in the expected call signature for assert_has_calls.
         ),
         call(
-            prompt=test_prompt_value, 
+            test_prompt_value, # Passed positionally
             temperature=0.8,
             syntax_validation=False
         )
@@ -87,11 +85,22 @@ async def test_initialize_population_workflow():
     for program in all_programs:
         assert program.generation == 0
         assert program.status == "unevaluated"
-        assert program.fitness_score is None # Initially no fitness score
-        assert program.parent_program_id is None # Initial population has no parents
-        assert program.llm_prompt == test_prompt_value # Prompt used for generation
-        assert program.task_id == sample_task_definition.id # Changed to .id
-        assert program.description.startswith(f"Initial program for task {sample_task_definition.id}") # Changed to .id
+        # Corrected: Check against the default factory values for fitness_scores
+        expected_default_fitness_scores = {
+            "correctness": 0.0,
+            "runtime_ms": float('inf'),
+            "sharpe_ratio": 0,
+            "max_drawdown": 0,
+            "total_return": 0,
+            "win_rate": 0,
+            "profit_factor": 1
+        }
+        assert program.fitness_scores == expected_default_fitness_scores
+        assert program.parent_id is None # Changed from parent_program_id
+            # Removed assertion for program.task_id as it's not a field of the Program model
+            # and is not set by TaskManagerAgent.initialize_population on the Program object.
+        # Removed assertions for program.llm_prompt and program.description as they are not fields of Program model
+        # and are not set by TaskManagerAgent.initialize_population on the Program object.
 
     # Check that program_ids are unique (basic check)
     program_ids = [p.id for p in all_programs] # Changed to .id
